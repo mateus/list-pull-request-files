@@ -1,22 +1,26 @@
-chrome.runtime.onMessage.addListener(function(request, sender) {
-  if (request.action == "getSource") {
-    message.innerHTML = request.source;
-  }
+var clipboard = new Clipboard('.btn');
+var button = document.querySelector('.btn');
+
+chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
+    var url = tabs[0].url;
+    var re = /https:\/\/github.com\/\w+\/\w+\/pull\/\w+\/files/g;
+    if(url.match(re)) {
+      document.getElementById("container-success").classList += "show";
+    } else {
+      document.getElementById("container-error").classList += "show";
+    }
 });
 
-function onWindowLoad() {
+clipboard.on('success', function(e) {
+    console.info('Action:', e.action);
+    console.info('Text:', e.text);
+    console.info('Trigger:', e.trigger);
+    button.textContent = button.textContent + ' (Copied)';
 
-  var message = document.querySelector('#message');
+    e.clearSelection();
+});
 
-  chrome.tabs.executeScript(null, {
-    file: "getPagesSource.js"
-  }, function() {
-    // If you try and inject into an extensions page or the webstore/NTP you'll get an error
-    if (chrome.runtime.lastError) {
-      message.innerText = 'There was an error injecting script : \n' + chrome.runtime.lastError.message;
-    }
-  });
-
-}
-
-window.onload = onWindowLoad;
+clipboard.on('error', function(e) {
+    console.error('Action:', e.action);
+    console.error('Trigger:', e.trigger);
+});

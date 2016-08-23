@@ -1,0 +1,80 @@
+body, html {
+  width: 500px;
+  overflow: scroll;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 13px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  padding: 15px;
+  overflow: auto;
+}
+
+.container--no-padding-top {
+  padding-top: 0;
+}
+
+header {
+  background-color: #31373d;
+}
+
+h3 {
+  color: #ffffff;
+  margin: 5px 0;
+}
+
+.p--large {
+  font-size: 16px;
+}
+
+.message {
+  border: 2px dashed #dddddd;
+  padding: 10px;
+}
+
+.copied {
+  opacity: 0;
+}
+
+.copied--is-visible {
+  opacity: 1;
+}
+
+.btn {
+  outline: none;
+  padding: 8px 20px;
+  background-color: #96bf48;
+  border: 1px solid #96bf48;
+  color: #ffffff;
+  font-size: 14px;
+  border-radius: 3px;
+  width: 100%;
+}
+
+.btn:hover {
+  background-color: #7ba232;
+  border: 1px solid #7ba232;
+  cursor: pointer;
+}
+
+.error-link {
+  color: #96bf48;
+}
+
+.center {
+  text-align: center;
+}
+
+#container-error,
+#container-success {
+  display: none;
+}
+
+.show {
+  display: block !important;
+}

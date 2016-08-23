@@ -3,26 +3,43 @@
   <head>
     <meta charset="utf-8">
     <title>List Pull Request Files</title>
-    <style>
-      body, html {
-        width: 500px;
-        padding: 5px 10px;
-        overflow: scroll;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-        font-size: 13px;
-        line-height: 1.5;
-        color: #333;
-        background-color: #fff;
-      }
+    <link rel="stylesheet" href="styles.css" media="screen" charset="utf-8">
 
-      h3 {
-        color: #7ab55c;
-      }
-    </style>
-    <script src='main.js'></script>
+    <script src='scrape.js'></script>
+    <script src='clipboard.min.js'></script>
   </head>
   <body>
-    <h3>Copy the following text to your Pull Request description:</h3>
-    <div id='message'>Loading...</div>
+    <div id="container-success">
+      <header>
+        <div class="container">
+          <h3>Copy the following text to your Pull Request description:</h3>
+        </div>
+      </header>
+      <section>
+        <div class="container">
+          <div class="message" id="message">Loading...</div>
+        </div>
+        <div class="container container--no-padding-top">
+          <button class="btn" data-clipboard-target="#message">Copy to Clipboard</button>
+        </div>
+      </section>
+    </div>
+    <div id="container-error">
+      <header class="center">
+        <div class="container">
+          <h3>Wrong page!</h3>
+        </div>
+      </header>
+      <section>
+        <div class="container">
+          <p class="p--large center">
+            Navigate to your Pull Request Files page:
+            <br>
+            <span class="error-link">github.com/:owner/:repo/pull/:number/files</span>
+          </p>
+        </div>
+      </section>
+    </div>
+    <script src='main.js'></script>
   </body>
 </html>
