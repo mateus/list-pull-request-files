@@ -3,7 +3,7 @@ var button = document.querySelector('.btn');
 
 chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
     var url = tabs[0].url;
-    var re = /https:\/\/github.com\/\w+\/\w+\/pull\/\w+\/files/g;
+    var re = /https:\/\/github.com\/[A-Za-z0-9\-\._]+\/[A-Za-z0-9\-\._]+\/pull\/[A-Za-z0-9\-\._]+\/files/g;
     if(url.match(re)) {
       document.getElementById("container-success").classList += "show";
     } else {
