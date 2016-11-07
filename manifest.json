@@ -1,7 +1,12 @@
 {
   "manifest_version": 2,
   "name": "GitHub List Pull Request Files",
-  "version": "0.2.0",
+  "version": "0.2.1",
+  "description": "Lists all the file changes from your Pull Request and creates a list with Markdown syntax for your Pull Request description.",
+  "icons": {
+    "128": "icon.png",
+    "48": "icon48x48.png"
+  },
   "browser_action": {
     "default_icon": {
       "128": "icon.png",
