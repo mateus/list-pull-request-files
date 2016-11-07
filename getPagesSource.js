@@ -8,7 +8,7 @@ function scrapePage(document) {
   statusArr = document.querySelectorAll('.diffbar-item.toc-select .select-menu-item .octicon');
   resultObj = {};
 
-  document.querySelectorAll('#files .file-info a').forEach(function(i, index){
+  document.querySelectorAll('#files .file-info a[href^="#diff"]').forEach(function(i, index){
      var status = statusArr[index].classList[1].split('-')[2]
 
      if(!(status in resultObj))

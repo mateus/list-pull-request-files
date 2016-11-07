@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "GitHub List Pull Request Files",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "browser_action": {
     "default_icon": {
       "128": "icon.png",
